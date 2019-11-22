@@ -7,9 +7,9 @@ resource "aws_instance" "myec2" {
   ami = "${var.ami}"
   instance_type = "${var.instancetype}"
   subnet_id = "${var.subnetid}"
-  vpc_security_group_ids = ["${var.sgs}"]
+  secuirty_groups = ["${var.sg_id}"]
   key_name = "sgkey"
-  availability_zone = "ap-southeast-1a"
+  availability_zone = ["${var.azs}"]
   count = 2
   ebs_block_device {
     device_name = "{}"
