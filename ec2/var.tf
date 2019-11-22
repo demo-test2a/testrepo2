@@ -8,6 +8,7 @@ variable "ami" {
 
 variable "instance_type" {
   type = "string"
+  default = "t2.mictro"
 }
 
 variable "subnet_id" {
@@ -33,3 +34,4 @@ variable "tags" {
   type = "map"
   Name = "webserver"
 }  
+
