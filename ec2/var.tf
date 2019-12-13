@@ -4,7 +4,6 @@ variable "aws_region" {
 
 variable "ami" {
   type = "string"
-  description = "myami"
 }
 
 variable "instance_type" {
@@ -14,7 +13,6 @@ variable "instance_type" {
 
 variable "subnet_id" {
   type = "string"
-  description = "subnet id for my ec2"
 }
 variable "key_name" {
   type = "string"
@@ -24,13 +22,16 @@ variable "sg_id" {
   type = "string"
 }
 
-variable "vpc_id" {}
+variable "vpc_id" {
+  type = "string"
+}
 
 variable "azs" {
-  type = "map"
-  default = {
-    ap-south-east-1 = [
-      "ap-southeast-1a",
-      "ap-southeast-1b"]
-  }
+  type ="list(string)"
 }
+
+variable "tags" {
+  type = "map"
+  Name = "webserver"
+}  
+
